@@ -1,0 +1,30 @@
+# Virtual environment
+.venv/
+
+# macOS system files
+.DS_Store
+
+# Microsoft Office temporary files
+~$*
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VSCode settings
+.vscode/
+
+# Environment/config files (optional)
+.env
+*.env
+
+# Data files (optional, if generated or sensitive)
+*.log
+*.sqlite
+*.db
+
+# OS/IDE-specific trash
+Thumbs.db
