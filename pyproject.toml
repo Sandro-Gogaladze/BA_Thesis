@@ -10,9 +10,20 @@ authors = [
     {name = "Sandro Gogaladze", email = "sandro.gogaladze@iset.ge"}
 ]
 readme = "README.md"
-license = {text = "Academic Use Only"}
+license = {text = "All Rights Reserved"}
 requires-python = ">=3.9"
-
+keywords = ["machine-learning", "banking", "income-estimation", "fintech", "regulatory-compliance", "georgia"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Office/Business :: Financial",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
 dependencies = [
     "numpy>=1.21.0",
     "pandas>=1.3.0",
@@ -26,6 +37,9 @@ dependencies = [
     "tqdm>=4.60.0",
     "shap>=0.40.0",
 ]
+
+[tool.setuptools]
+packages = ["IncomeEstimation"]
 
 [project.optional-dependencies]
 notebook = [
