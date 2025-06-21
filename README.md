@@ -24,16 +24,13 @@ Accurately assessing a borrower's creditworthiness is a core challenge for finan
 
 My thesis explores how Georgian banks can use automated income estimation models based on machine learning to address these issues. With the National Bank of Georgia (NBG) now permitting the use of data-driven techniques for income verification, this work evaluates model architectures that balance predictive accuracy with regulatory compliance. It compares the performance of several modeling strategies, offering practical insights for implementing regulation-aware income estimation in Georgia's financial sector.
 
-The project evaluates and compares:
+In this study, I explore how machine learning models can effectively balance predictive accuracy with regulatory requirements in the income estimation domain. The research investigates various approaches for achieving this balance:
 
-* A baseline XGBoost regression model
-* Post-hoc quantile regression calibration
-* Pre-hoc conservative objective functions:
+* **Baseline Analysis**: Establishing performance benchmarks with standard regression techniques
+* **Post-hoc Calibration Methods**: Exploring how existing models can be calibrated after training
+* **Pre-hoc Adjustment Strategies**: Developing custom loss functions that incorporate regulatory constraints directly into model training
 
-  * Huber + Threshold penalty
-  * Segment-Aware Huber + Threshold penalty
-
-The study focuses on how machine learning models can balance accuracy with regulatory compliance, aligned with National Bank of Georgia (NBG) guidelines.
+Through systematic experimentation across different model architectures, the thesis provides insights into which approaches best satisfy both statistical performance metrics and National Bank of Georgia (NBG) regulatory guidelines, offering practical implementation strategies for financial institutions.
 
 ---
 

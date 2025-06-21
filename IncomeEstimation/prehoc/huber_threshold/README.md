@@ -18,13 +18,7 @@ The pre-hoc Huber + Threshold model represents a **training-time regulatory inte
 
 **Huber Loss Formula:**
 
-$$
-L_{\delta}(y_{true}, y_{pred}) = 
-\begin{cases} 
-\frac{1}{2}(y_{true} - y_{pred})^2 & \text{if } |y_{true} - y_{pred}| \leq \delta \\
-\delta|y_{true} - y_{pred}| - \frac{1}{2}\delta^2 & \text{otherwise}
-\end{cases}
-$$
+![Huber Loss](https://latex.codecogs.com/png.latex?L_%7B%5Cdelta%7D%28y_%7Btrue%7D%2C%20y_%7Bpred%7D%29%20%3D%20%5Cbegin%7Bcases%7D%20%5Cfrac%7B1%7D%7B2%7D%28y_%7Btrue%7D%20-%20y_%7Bpred%7D%29%5E2%20%26%20%5Ctext%7Bif%20%7D%20%7Cy_%7Btrue%7D%20-%20y_%7Bpred%7D%7C%20%5Cleq%20%5Cdelta%20%5C%5C%20%5Cdelta%7Cy_%7Btrue%7D%20-%20y_%7Bpred%7D%7C%20-%20%5Cfrac%7B1%7D%7B2%7D%5Cdelta%5E2%20%26%20%5Ctext%7Botherwise%7D%20%5Cend%7Bcases%7D)
 
 Where δ (delta) is the transition point between quadratic and linear behavior.
 
@@ -32,9 +26,7 @@ Where δ (delta) is the transition point between quadratic and linear behavior.
 
 **I added threshold penalty to the loss** to directly enforce regulatory constraints:
 
-$$
-\text{Total\_Loss} = \text{Huber\_Loss} + \lambda \times \text{Threshold\_Penalty}
-$$
+![Total Loss](https://latex.codecogs.com/png.latex?%5Ctext%7BTotal%5C_Loss%7D%20%3D%20%5Ctext%7BHuber%5C_Loss%7D%20&plus;%20%5Clambda%20%5Ctimes%20%5Ctext%7BThreshold%5C_Penalty%7D)
 
 Where:
 - **λ (lambda)**: Penalty weight controlling accuracy-compliance trade-off
