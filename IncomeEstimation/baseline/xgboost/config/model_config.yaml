@@ -1,0 +1,36 @@
+# XGBoost Baseline Model Configuration
+
+# Model Parameters (BEST FROM HYPERPARAMETER TUNING)
+model_params:
+  colsample_bytree: 0.6
+  gamma: 0
+  learning_rate: 0.05
+  max_depth: 5
+  n_estimators: 300
+  reg_alpha: 1
+  reg_lambda: 5
+  subsample: 1.0
+  tree_method: 'hist'
+  random_state: 42
+
+# Training Parameters
+training:
+  num_boost_round: 300
+  early_stopping_rounds: 50
+  verbose_eval: 50
+
+# Evaluation Parameters
+evaluation:
+  dynamic_threshold:
+    absolute: 200
+    percentage: 20
+  metrics:
+    - rmse
+    - mae
+    - r2
+    - within_10pct
+    - within_20pct
+    - within_30pct
+    - overestimation_pct
+    - overestimation_20plus_pct
+    - exceeds_threshold_pct

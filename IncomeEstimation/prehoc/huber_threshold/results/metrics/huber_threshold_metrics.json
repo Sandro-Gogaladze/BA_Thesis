@@ -1,0 +1,78 @@
+{
+    "data_type": "test",
+    "overall": {
+        "rmse": 1276.3276910731038,
+        "mae": 801.1710205078125,
+        "r2": 0.5536284446716309,
+        "mape": 30.211207506265747,
+        "within_10pct": 19.57,
+        "within_20pct": 39.005,
+        "within_30pct": 57.394999999999996,
+        "overestimation_pct": 26.545,
+        "overestimation_20plus_pct": 12.870000000000001,
+        "exceeds_threshold_pct": 10.0,
+        "avg_dynamic_threshold": 518.0415700000001
+    },
+    "segments": [
+        {
+            "segment": "Low (\u22641500)",
+            "count": 6857,
+            "r2": 0.12337851524353027,
+            "rmse": 311.26469593819985,
+            "mae": 238.90701293945312,
+            "mape": 29.996936029430433,
+            "within_10pct": 23.683826746390547,
+            "within_20pct": 45.12177337027855,
+            "within_30pct": 62.49088522677556,
+            "overestimation_pct": 48.95726994312382,
+            "overestimation_20plus_pct": 29.561032521510867,
+            "exceeds_threshold_pct": 21.19002479218317,
+            "avg_dynamic_threshold": 220.15732827767246
+        },
+        {
+            "segment": "Mid (1500-2500)",
+            "count": 6584,
+            "r2": -4.645331382751465,
+            "rmse": 639.0523990644273,
+            "mae": 521.9631958007812,
+            "mape": 26.09143366436132,
+            "within_10pct": 21.445929526123937,
+            "within_20pct": 42.57290400972054,
+            "within_30pct": 63.22904009720535,
+            "overestimation_pct": 19.851154313487243,
+            "overestimation_20plus_pct": 6.044957472660997,
+            "exceeds_threshold_pct": 6.044957472660997,
+            "avg_dynamic_threshold": 399.07524301336576
+        },
+        {
+            "segment": "High (>2500)",
+            "count": 6559,
+            "r2": -0.4828455448150635,
+            "rmse": 2110.93012674508,
+            "mae": 1669.2528076171875,
+            "mape": 34.57069073416002,
+            "within_10pct": 13.386186918737614,
+            "within_20pct": 29.02881536819637,
+            "within_30pct": 46.211312700106724,
+            "overestimation_pct": 9.8338161305077,
+            "overestimation_20plus_pct": 2.271687757280073,
+            "exceeds_threshold_pct": 2.271687757280073,
+            "avg_dynamic_threshold": 948.8795853026378
+        },
+        {
+            "segment": "All Data",
+            "count": 20000,
+            "r2": 0.5536284446716309,
+            "rmse": 1276.3276910731038,
+            "mae": 801.1710205078125,
+            "mape": 30.211207506265747,
+            "within_10pct": 19.57,
+            "within_20pct": 39.005,
+            "within_30pct": 57.394999999999996,
+            "overestimation_pct": 26.545,
+            "overestimation_20plus_pct": 12.870000000000001,
+            "exceeds_threshold_pct": 10.0,
+            "avg_dynamic_threshold": 518.0415700000001
+        }
+    ]
+}

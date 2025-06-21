@@ -1,0 +1,5 @@
+# Configuration for quantile regression post-hoc model
+quantile: 0.2  # Quantile level - same as the notebook
+random_state: 42  # For reproducibility
+absolute_threshold: 200  # For dynamic threshold calculation
+percentage_threshold: 20  # For dynamic threshold calculation (20%)

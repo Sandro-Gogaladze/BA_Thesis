@@ -1,0 +1,58 @@
+# Segment-Aware Huber Threshold Model Configuration
+
+# Model parameters
+model:
+  objective: "segment_aware_huber_threshold" # Use custom segment-aware huber_threshold objective
+  
+  # Segment-specific Huber delta parameters
+  delta:
+    low_segment: 30.0      # Huber delta for low income (≤1500 GEL)
+    mid_segment: 80.0      # Huber delta for mid income (1500-2500 GEL)
+    high_segment: 200.0    # Huber delta for high income (>2500 GEL)
+  
+  # Segment-specific threshold penalty weights
+  threshold_weight:
+    low_segment: 12.0      # Weight for low income threshold violations
+    mid_segment: 3.0       # Weight for mid income threshold violations
+    high_segment: 1.0      # Weight for high income threshold violations
+  
+  # Dynamic threshold parameters (same for all segments)
+  dynamic_threshold:
+    absolute: 200          # Absolute threshold (GEL)
+    percentage: 20         # Percentage threshold (%)
+  
+  # Income segment thresholds
+  segments:
+    low_threshold: 1500    # Low/mid income boundary
+    mid_threshold: 2500    # Mid/high income boundary
+  
+# XGBoost base parameters (same as Huber Threshold model)
+max_depth: 5
+eta: 0.05
+subsample: 1.0
+colsample_bytree: 0.6
+lambda: 5
+alpha: 1
+gamma: 0
+tree_method: "hist"
+random_state: 42
+
+# Training parameters
+training:
+  num_boost_round: 300
+  early_stopping_rounds: 50
+  verbose_eval: 50
+  
+# Evaluation parameters
+evaluation:
+  metrics:
+    - "rmse"
+    - "mae"
+    - "r2"
+    - "exceeds_threshold_pct"
+    - "overestimation_pct"
+    - "within_20pct"
+
+# Visualization parameters
+visualization:
+  theme: "teal"

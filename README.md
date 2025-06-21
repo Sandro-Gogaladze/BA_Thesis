@@ -43,25 +43,62 @@ The study focuses on how machine learning models can balance accuracy with regul
 BA_THESIS/
 ├── data/
 │   ├── raw/
-│   │   └── income_data.xlsx                 # Synthetic dataset provide by BOG
+│   │   └── income_data.xlsx                 # Synthetic dataset provided by BOG
 │   └── processed/
-│       ├── train.csv                        # Created by notebook.ipynb
-│       └── test.csv                         # Created by notebook.ipynb
+│       ├── train.csv                        # Preprocessed training data
+│       └── test.csv                         # Preprocessed test data
 ├── docs/
-│   └── Bachelor Thesis - Sandro Gogaladze.docx  # Thesis report
+│   ├── Bachelor Thesis - Sandro Gogaladze.docx  # Main thesis document
+│   └── additional/                          # Supporting documents and references
+├── IncomeEstimation/                        # Interactive codebase (see README)
+│   ├── src/                                 # Core source code modules
+│   ├── baseline/
+│   │   └── xgboost/                         # Baseline XGBoost model
+│   ├── posthoc/
+│   │   └── quantile/                        # Post-hoc quantile calibration
+│   ├── prehoc/                              # Pre-hoc regulation-aware models
+│   │   ├── huber_threshold/                 # Huber loss + threshold penalty
+│   │   └── segment_aware/                   # Segment-aware Huber + threshold
+│   └── README.md                           # Detailed implementation guide
 ├── Notebooks/
-│   └── notebook.ipynb                      # Full project in code
+│   └── notebook.ipynb                      # Complete research notebook
+├── pyproject.toml                          # Project configuration and dependencies
+├── Makefile                                # Main project workflow automation
 ├── .gitignore
-└── README.md                               
+└── README.md                               # This file
 ```
 
 ---
 
-## Notebook and Thesis Document
+## How to Run the Analysis
 
-The `Bachelor Thesis - Sandro Gogaladze.docx` file is the thesis report.
+This project can be executed in two ways, both producing identical results for consistency and reproducibility:
 
-The `notebook.ipynb` contains the full end-to-end implementation of the thesis. It covers everything from exploratory data analysis and preprocessing to modeling, calibration, and evaluation. All figures and numerical findings in my thesis are derived directly from this source. The notebook is available upon request for verification and reproducibility.
+### Option 1: Interactive Notebook (For Visual Analysis)
+
+The complete research analysis is available in the Jupyter `notebook.ipynb`.
+
+This `notebook.ipynb` contains the full end-to-end analysis including:
+- Exploratory Data Analysis (EDA)
+- Data preprocessing and feature engineering
+- Model training and evaluation for all four approaches
+- Comprehensive visualizations and statistical analysis
+- Research findings and regulatory compliance assessment
+
+**Note:** The `notebook.ipynb` is primarily for visual purposes and research demonstration, though execution is possible.
+
+### Option 2: Interactive Repository (Recommended for Hands-on Exploration)
+
+For direct interaction with the models and pipeline components, use the structured repository:
+
+```bash
+cd IncomeEstimation/
+make all  # Runs complete pipeline for all models
+```
+
+See the [IncomeEstimation README](IncomeEstimation/README.md) for detailed usage instructions and individual model documentation.
+
+**Note:** Both approaches use identical preprocessing, training, and evaluation logic, ensuring consistent and reproducible results across different execution environments.
 
 ---
 

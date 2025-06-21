@@ -1,0 +1,37 @@
+# Huber Threshold Model Configuration
+
+# Model parameters
+model:
+  objective: "huber_threshold" # Use custom huber_threshold objective
+  delta: 100.0                 # Huber loss delta parameter
+  threshold_weight: 3.0        # Weight for threshold exceedance penalty
+  dynamic_threshold:
+    absolute: 200              # Absolute threshold (GEL)
+    percentage: 20             # Percentage threshold (%)
+  
+# XGBoost base parameters
+max_depth: 5
+eta: 0.05
+subsample: 1.0
+colsample_bytree: 0.6
+lambda: 5
+alpha: 1
+gamma: 0
+tree_method: "hist"
+random_state: 42
+
+# Training parameters
+training:
+  num_boost_round: 300
+  early_stopping_rounds: 50
+  verbose_eval: 50
+  
+# Evaluation parameters
+evaluation:
+  metrics:
+    - "rmse"
+    - "mae"
+    - "r2"
+    - "exceeds_threshold_pct"
+    - "overestimation_pct"
+    - "within_20pct"

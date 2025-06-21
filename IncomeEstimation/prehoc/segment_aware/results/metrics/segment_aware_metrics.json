@@ -1,0 +1,69 @@
+{
+    "test": {
+        "rmse": 1258.0441168734903,
+        "mae": 829.7542724609375,
+        "mape": 32.428683978844994,
+        "r2": 0.5663255453109741,
+        "within_10pct": 16.455000000000002,
+        "within_20pct": 33.305,
+        "within_30pct": 50.93,
+        "overestimation_pct": 21.215,
+        "overestimation_20plus_pct": 9.504999999999999,
+        "exceeds_threshold_pct": 7.23,
+        "avg_dynamic_threshold": 518.0415700000001
+    },
+    "test_segments": [
+        {
+            "segment": "Low (\u22641500)",
+            "count": 6857,
+            "r2": -0.13617074489593506,
+            "rmse": 354.36075809124236,
+            "within_10pct": 18.856642846725975,
+            "within_20pct": 37.99037479947499,
+            "within_30pct": 57.75120315006562,
+            "overestimation_pct": 31.019396237421613,
+            "overestimation_20plus_pct": 16.712848184337172,
+            "exceeds_threshold_pct": 10.07729327694327,
+            "avg_dynamic_threshold": 220.15732827767246
+        },
+        {
+            "segment": "Mid (1500-2500)",
+            "count": 6584,
+            "r2": -7.378917694091797,
+            "rmse": 778.5485694547258,
+            "within_10pct": 13.365735115431349,
+            "within_20pct": 27.91616038882139,
+            "within_30pct": 45.170109356014585,
+            "overestimation_pct": 16.236330498177402,
+            "overestimation_20plus_pct": 6.728432563791009,
+            "exceeds_threshold_pct": 6.728432563791009,
+            "avg_dynamic_threshold": 399.07524301336576
+        },
+        {
+            "segment": "High (>2500)",
+            "count": 6559,
+            "r2": -0.3597904443740845,
+            "rmse": 2021.4448421859054,
+            "within_10pct": 17.045281292880013,
+            "within_20pct": 33.81613050769934,
+            "within_30pct": 49.580728769629516,
+            "overestimation_pct": 15.962799207196218,
+            "overestimation_20plus_pct": 4.75682268638512,
+            "exceeds_threshold_pct": 4.75682268638512,
+            "avg_dynamic_threshold": 948.8795853026378
+        },
+        {
+            "segment": "All Data",
+            "count": 20000,
+            "r2": 0.5663255453109741,
+            "rmse": 1258.0441168734903,
+            "within_10pct": 16.455000000000002,
+            "within_20pct": 33.305,
+            "within_30pct": 50.93,
+            "overestimation_pct": 21.215,
+            "overestimation_20plus_pct": 9.504999999999999,
+            "exceeds_threshold_pct": 7.23,
+            "avg_dynamic_threshold": 518.0415700000001
+        }
+    ]
+}

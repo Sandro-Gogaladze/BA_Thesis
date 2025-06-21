@@ -1,0 +1,136 @@
+{
+    "train": {
+        "rmse": 894.3105934181928,
+        "mae": 616.9981689453125,
+        "mape": 34.68155467433519,
+        "r2": 0.7861831188201904,
+        "within_10pct": 25.95375,
+        "within_20pct": 48.175000000000004,
+        "within_30pct": 64.27000000000001,
+        "overestimation_pct": 55.98125,
+        "overestimation_20plus_pct": 33.550000000000004,
+        "exceeds_threshold_pct": 32.16125,
+        "avg_dynamic_threshold": 522.3232175
+    },
+    "test": {
+        "rmse": 958.6557971973048,
+        "mae": 652.8211059570312,
+        "mape": 36.04254312455529,
+        "r2": 0.7481757402420044,
+        "within_10pct": 24.215,
+        "within_20pct": 45.989999999999995,
+        "within_30pct": 62.255,
+        "overestimation_pct": 56.769999999999996,
+        "overestimation_20plus_pct": 34.975,
+        "exceeds_threshold_pct": 33.550000000000004,
+        "avg_dynamic_threshold": 518.0415700000001
+    },
+    "train_segments": [
+        {
+            "segment": "High (>2500)",
+            "count": 26617,
+            "r2": 0.4545832872390747,
+            "rmse": 1291.0367442485904,
+            "within_10pct": 29.95829732877484,
+            "within_20pct": 56.11827027839351,
+            "within_30pct": 74.62148251117706,
+            "overestimation_pct": 35.64263440658226,
+            "overestimation_20plus_pct": 13.250929856858399,
+            "exceeds_threshold_pct": 13.250929856858399,
+            "avg_dynamic_threshold": 954.1115076830597
+        },
+        {
+            "segment": "Mid (1500-2500)",
+            "count": 26108,
+            "r2": -4.899477481842041,
+            "rmse": 650.2979124985717,
+            "within_10pct": 31.258618048107863,
+            "within_20pct": 56.80251263980389,
+            "within_30pct": 73.94668300903938,
+            "overestimation_pct": 52.14493641795618,
+            "overestimation_20plus_pct": 25.892446759613915,
+            "exceeds_threshold_pct": 25.892446759613915,
+            "avg_dynamic_threshold": 398.02563199019454
+        },
+        {
+            "segment": "Low (\u22641500)",
+            "count": 27275,
+            "r2": -1.8555502891540527,
+            "rmse": 560.8033579161238,
+            "within_10pct": 16.967919340054998,
+            "within_20pct": 32.16498625114574,
+            "within_30pct": 44.90559120073328,
+            "overestimation_pct": 79.50137488542622,
+            "overestimation_20plus_pct": 60.68927589367553,
+            "exceeds_threshold_pct": 56.615948670944086,
+            "avg_dynamic_threshold": 219.93100641613196
+        },
+        {
+            "segment": "All Data",
+            "count": 80000,
+            "r2": 0.7861831188201904,
+            "rmse": 894.3105934181928,
+            "within_10pct": 25.95375,
+            "within_20pct": 48.175000000000004,
+            "within_30pct": 64.27000000000001,
+            "overestimation_pct": 55.98125,
+            "overestimation_20plus_pct": 33.550000000000004,
+            "exceeds_threshold_pct": 32.16125,
+            "avg_dynamic_threshold": 522.3232175
+        }
+    ],
+    "test_segments": [
+        {
+            "segment": "Low (\u22641500)",
+            "count": 6857,
+            "r2": -2.007992744445801,
+            "rmse": 576.5834989400928,
+            "within_10pct": 16.085751786495553,
+            "within_20pct": 30.85897622867143,
+            "within_30pct": 43.75091147732245,
+            "overestimation_pct": 79.918331631909,
+            "overestimation_20plus_pct": 61.426279714160714,
+            "exceeds_threshold_pct": 57.26994312381508,
+            "avg_dynamic_threshold": 220.15732827767246
+        },
+        {
+            "segment": "Mid (1500-2500)",
+            "count": 6584,
+            "r2": -6.0460004806518555,
+            "rmse": 713.9422464387438,
+            "within_10pct": 29.4501822600243,
+            "within_20pct": 54.55650060753341,
+            "within_30pct": 71.9775212636695,
+            "overestimation_pct": 53.34143377885784,
+            "overestimation_20plus_pct": 28.402187120291618,
+            "exceeds_threshold_pct": 28.402187120291618,
+            "avg_dynamic_threshold": 399.07524301336576
+        },
+        {
+            "segment": "High (>2500)",
+            "count": 6559,
+            "r2": 0.35338497161865234,
+            "rmse": 1393.9551642717925,
+            "within_10pct": 27.45845403262692,
+            "within_20pct": 53.20933069065406,
+            "within_30pct": 71.84021954566245,
+            "overestimation_pct": 36.011587132184786,
+            "overestimation_20plus_pct": 13.919804848300046,
+            "exceeds_threshold_pct": 13.919804848300046,
+            "avg_dynamic_threshold": 948.8795853026378
+        },
+        {
+            "segment": "All Data",
+            "count": 20000,
+            "r2": 0.7481757402420044,
+            "rmse": 958.6557971973048,
+            "within_10pct": 24.215,
+            "within_20pct": 45.989999999999995,
+            "within_30pct": 62.255,
+            "overestimation_pct": 56.769999999999996,
+            "overestimation_20plus_pct": 34.975,
+            "exceeds_threshold_pct": 33.550000000000004,
+            "avg_dynamic_threshold": 518.0415700000001
+        }
+    ]
+}
