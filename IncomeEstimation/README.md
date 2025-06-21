@@ -215,3 +215,19 @@ Each model README contains:
 - **Results**: Performance metrics and regulatory compliance analysis
 - **Usage**: Specific commands and examples for that model
 - **Insights**: Strengths, limitations, and business implications
+
+## Repository Notes
+
+This implementation includes visualization outputs (figures and metrics) for demonstration purposes, while excluding large binary files (models, processed datasets) from version control. This approach balances visibility of results with efficient repository management.
+
+- **Included for Visual Reference**:
+  - Evaluation metrics (JSON files)
+  - Visualization figures (PNG files)
+  - README documentation
+  
+- **Excluded from Version Control**:
+  - Trained model files (.joblib)
+  - Processed datasets
+  - Model prediction outputs (.csv)
+  
+The complete codebase enables reproduction of all results through the provided Makefile commands, while the included visualizations provide immediate insights without requiring full execution of the pipeline.

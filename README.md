@@ -44,9 +44,9 @@ BA_THESIS/
 ├── data/
 │   ├── raw/
 │   │   └── income_data.xlsx                 # Synthetic dataset provided by BOG
-│   └── processed/
-│       ├── train.csv                        # Preprocessed training data
-│       └── test.csv                         # Preprocessed test data
+│   └── processed/ (gitignored)
+│       ├── train.csv                        # Preprocessed training data (generated)
+│       └── test.csv                         # Preprocessed test data (generated)
 ├── docs/
 │   ├── Bachelor Thesis - Sandro Gogaladze.docx  # Main thesis document
 │   └── additional/                          # Supporting documents and references

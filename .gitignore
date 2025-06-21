@@ -38,6 +38,23 @@ htmlcov/
 *.env
 .python-version
 
+# Data directories
+data/processed/
+
+# Prediction outputs
+**/predictions/
+**/predictions/*.csv
+
+# Model files and serialized objects
+*.joblib
+*.pkl
+*.model
+*.h5
+*.pt
+*.onnx
+*.pb
+*.bin
+*.sav
 
 # Logs
 *.log
@@ -57,3 +74,17 @@ build/
 # OS/IDE-specific trash
 Thumbs.db
 .directory
+
+# Keep these files for visual purposes
+# ! means "do not ignore"
+!**/figures/**
+!**/metrics/**
+!README.md
+
+# Ensure predictions are excluded even if in non-excluded directories
+**/predictions/*.csv
+**/test_predictions.csv
+**/xgboost_predictions.csv
+**/quantile_predictions.csv
+**/huber_threshold_predictions.csv
+**/segment_aware_predictions.csv
