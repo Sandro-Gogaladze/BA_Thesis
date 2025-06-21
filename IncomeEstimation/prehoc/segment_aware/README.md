@@ -23,37 +23,47 @@ This segmented approach ensures appropriate regulatory protection where it's mos
 
 The model implements a sophisticated segment-aware loss function with two main components:
 
-![Total Loss](https://latex.codecogs.com/png.latex?%5Cmathcal%7BL%7D_s%20%3D%20%5Cmathcal%7BL%7D_%7B%5Cmathrm%7BHuber%2C%7Ds%7D%20&plus;%20%5Cmathcal%7BL%7D_%7B%5Cmathrm%7BPenalty%2C%7Ds%7D)
+```math
+\mathcal{L}_s = \mathcal{L}_{\mathrm{Huber,}s} + \mathcal{L}_{\mathrm{Penalty,}s}
+```
 
 The first component is the segment-specific Huber loss:
 
-![Huber Loss](https://latex.codecogs.com/png.latex?%5Cmathcal%7BL%7D_%7B%5Cmathrm%7BHuber%2Cs%7D%7D%20%3D%20%5Cbegin%7Bcases%7D%20%28%5Chat%7By%7D_i%20-%20y_i%29%5E2%2C%20%26%20%5Ctext%7Bif%20%7D%20%7C%5Chat%7By%7D_i%20-%20y_i%7C%20%5Cleq%20%5Cdelta_s%20%5C%5C%202%5Cdelta_s%20%5Ccdot%20%7C%5Chat%7By%7D_i%20-%20y_i%7C%20-%20%5Cdelta_s%2C%20%26%20%5Ctext%7Botherwise%7D%20%5Cend%7Bcases%7D)
+```math
+\mathcal{L}_{\mathrm{Huber,s}} = 
+\begin{cases}
+(\hat{y}_i - y_i)^2, & \text{if } |\hat{y}_i - y_i| \leq \delta_s \\
+2\delta_s \cdot |\hat{y}_i - y_i| - \delta_s, & \text{otherwise}
+\end{cases}
+```
 
 The second component is the regulatory penalty term, which activates only when the prediction exceeds the allowable threshold:
 
-![Penalty Loss](https://latex.codecogs.com/png.latex?%5Cmathcal%7BL%7D_%7B%5Cmathrm%7BPenalty%2Cs%7D%7D%20%3D%20%5Clambda_s%20%5Ccdot%20%28%5Chat%7By%7D_i%20-%20y_i%20-%20T_i%29%5E2%20%5Ccdot%20%5Cmathbf%7B1%7D_%7B%5B%5Chat%7By%7D_i%20%3E%20y_i&plus;T_i%5D%7D)
+```math
+\mathcal{L}_{\mathrm{Penalty,s}} = \lambda_s \cdot (\hat{y}_i - y_i - T_i)^2 \cdot \mathbf{1}_{[\hat{y}_i > y_i+T_i]}
+```
 
 **Components:**
-1. **Segment-specific Huber Loss** (![Huber Loss Symbol](https://latex.codecogs.com/png.latex?%5Cmathcal%7BL%7D_%7B%5Cmathrm%7BHuber%2Cs%7D%7D)): Provides a robust regression foundation with segment-specific delta parameters (![Delta Symbol](https://latex.codecogs.com/png.latex?%5Cdelta_s))
-2. **Regulatory Penalty Term** (![Penalty Loss Symbol](https://latex.codecogs.com/png.latex?%5Cmathcal%7BL%7D_%7B%5Cmathrm%7BPenalty%2Cs%7D%7D)): Applies segment-specific penalties (![Lambda Symbol](https://latex.codecogs.com/png.latex?%5Clambda_s)) when predictions exceed the allowed threshold
+1. **Segment-specific Huber Loss** ($\mathcal{L}_{\mathrm{Huber,s}}$): Provides a robust regression foundation with segment-specific delta parameters ($\delta_s$)
+2. **Regulatory Penalty Term** ($\mathcal{L}_{\mathrm{Penalty,s}}$): Applies segment-specific penalties ($\lambda_s$) when predictions exceed the allowed threshold
 
 ### Segment-Specific Parameters
 
 The model uses segment-specific parameters tuned for optimal regulatory compliance across income levels:
 
 - **Low Income (≤1500 GEL)**: 
-  - ![Lambda Symbol](https://latex.codecogs.com/png.latex?%5Clambda_s%20%3D%2012.0) (high penalty weight for vulnerable borrowers)
-  - ![Delta Symbol](https://latex.codecogs.com/png.latex?%5Cdelta_s%20%3D%20100) (smaller delta for tighter error bounds)
+  - $\lambda_s = 12.0$ (high penalty weight for vulnerable borrowers)
+  - $\delta_s = 100$ (smaller delta for tighter error bounds)
   
 - **Mid Income (1500-2500 GEL)**:
-  - ![Lambda Symbol](https://latex.codecogs.com/png.latex?%5Clambda_s%20%3D%203.0) (balanced penalty weight)
-  - ![Delta Symbol](https://latex.codecogs.com/png.latex?%5Cdelta_s%20%3D%20150) (moderate delta value)
+  - $\lambda_s = 3.0$ (balanced penalty weight)
+  - $\delta_s = 150$ (moderate delta value)
   
 - **High Income (>2500 GEL)**:
-  - ![Lambda Symbol](https://latex.codecogs.com/png.latex?%5Clambda_s%20%3D%201.0) (lower penalty weight)
-  - ![Delta Symbol](https://latex.codecogs.com/png.latex?%5Cdelta_s%20%3D%20300) (larger delta allowing more flexibility)
+  - $\lambda_s = 1.0$ (lower penalty weight)
+  - $\delta_s = 300$ (larger delta allowing more flexibility)
 
-These parameters control how strictly the model penalizes regulatory violations - a higher ![Lambda Symbol](https://latex.codecogs.com/png.latex?%5Clambda_s) leads to more conservative predictions.
+These parameters control how strictly the model penalizes regulatory violations - a higher $\lambda_s$ leads to more conservative predictions.
 
 ### Advantages
 
