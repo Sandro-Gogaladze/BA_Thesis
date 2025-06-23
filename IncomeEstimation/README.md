@@ -6,6 +6,8 @@ This directory contains the structured implementation of income estimation model
 
 The implementation evaluates different strategies for balancing predictive accuracy with regulatory compliance, specifically addressing the National Bank of Georgia's requirements that income predictions should not exceed actual income by more than 200 GEL or 20% (whichever is greater).
 
+> **Note on Regulatory Context:** This research is based on expert interviews with National Bank of Georgia officials and official regulatory documents. See the [Documentation Guide](../docs/README.md) for details on these materials.
+
 ### Modeling Approaches
 
 * **Baseline**
